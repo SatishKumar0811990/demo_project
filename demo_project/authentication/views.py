@@ -1,27 +1,10 @@
-from django.shortcuts import render
-from yaml import serialize
-from rest_framework import generics, status, views, permissions
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, BasePermission
+
+from rest_framework import generics, status, permissions
+from rest_framework.permissions import  BasePermission
 from .serializers import RegisterSerializer, LoginSerializer,AlluserSerializer, LogoutSerializer,ChangePasswordSerializer,CourseSerializer,InstructorSerializer
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import RefreshToken
 from .models import User
-from rest_framework.generics import ListAPIView
-from django.http import HttpResponse,JsonResponse
-from django.urls import reverse
-import jwt
-from django.conf import settings
-from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
 from .renderers import UserRenderer
-from rest_framework.parsers import JSONParser
-from django.utils.decorators import method_decorator
-from rest_framework.views import APIView
-from django.urls import reverse
-from django.shortcuts import redirect
-from django.views.decorators.csrf import csrf_exempt
-import io
-from rest_framework.renderers import JSONRenderer
 from .models import  Course,Teacher
 from rest_framework import viewsets
 
